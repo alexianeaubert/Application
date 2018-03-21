@@ -6,6 +6,7 @@ function post(req, res) {
 function postProcess(req, res){
    let process = require('../utilities');
    process.addPost(req,res);
+   console.log("addpost ok");
    
 }
 

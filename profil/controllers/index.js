@@ -3,6 +3,15 @@
 //   process.findPosts(req,res);
 // }
 function profil(req, res) {
-  res.render('profil', {user : req.session.user});
+
+  let mdp = req.body.password;
+  let profil = req.body.username;
+
+  let process = require('../utilities/index.js');
+  process.findPosts(req,res);
+  
 }
+
+
+
 module.exports.profil = profil;

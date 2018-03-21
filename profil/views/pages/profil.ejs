@@ -6,12 +6,21 @@
     <title>Profil</title>
 </head>
 <body>
-    <h1> Bienvenue sur votre profil <%= user.local.username %> </h1>
+    <h1> Bienvenue sur votre profil <%= nom %> </h1>
 
     <a href = "/newPost">Créer un nouveau post</a>
     <br>
     <h3>Votre actualité</h3>
     <br>
+    <div>
+        
+        <% posts.forEach(function(post){%>
+            <p>_____________________________________________________________________________________________________</p>
+            <h2><%= post.title %></h2>
+            <p><%= post.user.nom %></p>
+            <p><%= post.description %></p>
+        <%});%>
+    </div>
     
     
 </body>
