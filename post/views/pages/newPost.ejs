@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ajouter un post</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+</head>
+<body>
+    <h1> Nouveau post </h1>
+    
+    <form name="Formulaire" method="POST" action="/newPost" style="width:400px;height:400px;">
+      <label>Objet</label>
+      <br>
+      <input type="text" id="objet" name="title" placeholder="Objet" size="30" maxlength="70" required=" ">
+      <br>
+      <label>Commentaire</label>
+      <br>
+      <textarea type="text" id="post" name="description" placeholder="Posez votre question..." style="width:500px; height:100px;"> </textarea>
+      <input type="submit" id="envoyer">
+    </form>
+    
+
+</body>
+</html>
+
+
