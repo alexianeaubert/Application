@@ -7,11 +7,12 @@ function verifUser(req, res){
       if(err) throw err;
       if(user){
          if(user.comparePassword(password)){
+               req.session.user = user;
                res.redirect('/profil');
          }
          else res.send("Mauvais mot de passe");
       }
-      else resizeBy.send("Cet utilisateur n'existe pas");
+      else res.send("Cet utilisateur n'existe pas");
    });
 
 }

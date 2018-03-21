@@ -5,7 +5,7 @@ router.get('/signin', (req,res) => {
     controller.signin(req, res);
 });
 
-router.post('/signinProcess', (req,res) => {
+router.post('/signin', (req,res) => {
     controller.signinProcess(req, res);
 });
 

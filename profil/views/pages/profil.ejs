@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="refresh" content="1; URL=./profil" />
-    <title>Application</title>
+    <!-- <meta http-equiv="refresh" content="1; URL=./profil" /> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Profil</title>
 </head>
 <body>
-    <h1> Votre profil </h1>
+    <h1> Bienvenue sur votre profil <%= user.local.username %> </h1>
 
- 
-  
+    <a href = "/newPost">Créer un nouveau post</a>
+    <br>
+    <h3>Votre actualité</h3>
+    <br>
+    
     
 </body>
 </html>
+

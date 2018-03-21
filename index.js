@@ -5,13 +5,16 @@ let app = express();
 let cfgServer = require('./core/config/server');
 let cfgDatabase = require('./core/config/database');
 
+let session = require('express-session');
+app.use(session({secret:"ma phrase", resave:true, saveUninitialized:true}));
 
 let path = require('path');
 let dirViews = [
     path.join(__dirname, './public/views/pages'),
     path.join(__dirname, './signup/views/pages'),
     path.join(__dirname, './signin/views/pages'),
-    path.join(__dirname, './profil/views/pages')];
+    path.join(__dirname, './profil/views/pages'),
+    path.join(__dirname, './post/views/pages')];
 app.set('views', dirViews);
 app.set('view engine', 'ejs');
 
@@ -37,11 +40,13 @@ let signinRoutes = require('./signin/routes');
 let signupRoutes = require('./signup/routes');
 let profilRoutes = require('./profil/routes');
 let userRoutes = require('./user/routes');
+let postRoutes = require('./post/routes');
 app.use(publicRoutes);
 app.use(signinRoutes);
 app.use(signupRoutes);
 app.use(profilRoutes);
 app.use(userRoutes);
+app.use(postRoutes);
 
 // app.get("*", (req, res) => {
 //     res.send("Express response");
