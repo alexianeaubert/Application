@@ -5,9 +5,6 @@ let app = express();
 let cfgServer = require('./core/config/server');
 let cfgDatabase = require('./core/config/database');
 
-let session = require('express-session');
-app.use(session({secret:"ma phrase", resave:true, saveUninitialized:true}));
-
 let path = require('path');
 let dirViews = [
     path.join(__dirname, './public/views/pages'),
@@ -19,6 +16,8 @@ let dirViews = [
 app.set('views', dirViews);
 app.set('view engine', 'ejs');
 
+let session = require('express-session');
+app.use(session({secret:"ma phrase", resave:true, saveUninitialized:true}));
 
 let mongoose = require('mongoose');
 mongoose.connect(cfgDatabase.url, function(err) {

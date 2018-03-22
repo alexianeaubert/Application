@@ -1,9 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="refresh" content="1; URL=./profil" /> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Liste des amis</title>
+</head>
 <h1>Liste de vos amis</h1>
 
+<p><a href="/profil">Retour profil</a></p>
+
+<p>Personne que vous follow</p>
+
+
 <% users.forEach(function(user){ %>
-  
-   <a href="/friends/<%=user.local.username%>">
-     <h1><%=user.local.firstName %> </h1>
+
+   <a href="/friends/<%=user._id%>" onclick="">
+     <li><%=user.local.username %> </li>
    </a>
 
 <%});%>
+
+<br>
+<p>Personnes que vous unfollow</p>
+
+<% unUsers.forEach(function(unUser){ %>
+
+  <a href="/unfriends/<%=unUser._id%>" onclick="">
+    <li><%=unUser.local.username %> </li>
+  </a>
+
+<%});%>
+

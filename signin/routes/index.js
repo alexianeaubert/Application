@@ -1,7 +1,7 @@
 let router = require('express').Router();
 let controller = require('../controllers');
 
-router.get('/signin', (req,res) => {
+router.get('/', (req,res) => {
     controller.signin(req, res);
 });
 
