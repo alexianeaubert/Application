@@ -14,7 +14,8 @@ let dirViews = [
     path.join(__dirname, './signup/views/pages'),
     path.join(__dirname, './signin/views/pages'),
     path.join(__dirname, './profil/views/pages'),
-    path.join(__dirname, './post/views/pages')];
+    path.join(__dirname, './post/views/pages'),
+    path.join(__dirname, './friends/views/pages')];
 app.set('views', dirViews);
 app.set('view engine', 'ejs');
 
@@ -41,19 +42,15 @@ let signupRoutes = require('./signup/routes');
 let profilRoutes = require('./profil/routes');
 let userRoutes = require('./user/routes');
 let postRoutes = require('./post/routes');
+let friendRoutes = require('./friends/routes');
 app.use(publicRoutes);
 app.use(signinRoutes);
 app.use(signupRoutes);
 app.use(profilRoutes);
 app.use(userRoutes);
 app.use(postRoutes);
+app.use(friendRoutes);
 
-// app.get("*", (req, res) => {
-//     res.send("Express response");
-// });
-// Quelque soit la requête("*") singifie : j'affiche le message "Express response".
 
-//app.listen(3000);
-// Je lance le server en localhost et avec le port 3000.
 app.listen(cfgServer.port);
 console.log("Express server running on " + cfgServer.port);

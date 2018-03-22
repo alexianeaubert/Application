@@ -1,0 +1,9 @@
+<h1>Liste de vos amis</h1>
+
+<% users.forEach(function(user){ %>
+  
+   <a href="/friends/<%=user.local.username%>">
+     <h1><%=user.local.firstName %> </h1>
+   </a>
+
+<%});%>

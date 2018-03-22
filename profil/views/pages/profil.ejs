@@ -6,17 +6,19 @@
     <title>Profil</title>
 </head>
 <body>
-    <h1> Bienvenue sur votre profil <%= nom %> </h1>
-
-    <a href = "/newPost">Créer un nouveau post</a>
+    <h1> Bienvenue sur votre profil <%= nom %> </h1> 
+    <p> <a href="/" >Retour à la page de connexion</a> 
+    <a href = "/friends">Liste de vos amis</a>
+    <a href = "/newPost">Créer un nouveau post</a></p>
     <br>
-    <h3>Votre actualité</h3>
+    <h2>Votre actualité</h2>
     <br>
     <div>
         
         <% posts.forEach(function(post){%>
             <p>_____________________________________________________________________________________________________</p>
-            <h2><%= post.title %></h2>
+            <h3><%= post.title %></h3>
+            <p><%= post.createdAt %></p>
             <p><%= post.user.nom %></p>
             <p><%= post.description %></p>
         <%});%>
