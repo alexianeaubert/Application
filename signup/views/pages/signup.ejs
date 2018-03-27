@@ -8,177 +8,54 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 
-<style>.center{
+<style>
+  .center{
     margin-top: 20px;
     widows: 60%;
-    }</style>
-<!------ Include the above in your HEAD tag ---------->
+    }
+    .copyright{
+      font-size: 10px;
+      text-align: center;
+      
+    }
+    
+</style>
+
 <body>
 <div class="container center">
     <div class="row">
         <div class=" col-lg-offset-3 col-lg-6 col-xs-12 col-sm-12 col-md-4 well well-sm">
-            <legend><i class="glyphicon glyphicon-globe"></i></a> Sign up!</legend>
+            <legend><i class="glyphicon glyphicon-globe"></i></a> Inscrivez-vous ! </legend>
             <form action="#" method="post" class="form" role="form">
             <div class="row">
                 <div class="col-xs-6 col-md-6">
-                    <input class="form-control" name="firstname" placeholder="First Name" type="text"
+                    <input class="form-control" name="firstname" placeholder="Prénom" type="text"
                         required autofocus />
                 </div>
                 <div class="col-xs-6 col-md-6">
-                    <input class="form-control" name="lastname" placeholder="Last Name" type="text" required />
+                    <input class="form-control" name="lastname" placeholder="Nom de famille" type="text" required />
                 </div>
                
             </div>
             <br>
-            <input class="form-control" name="username" placeholder="Your Username" type="username" />
+            <input class="form-control" name="username" placeholder="Votre nom utilisateur" type="username" />
             <br>
-            <input class="form-control" name="email" placeholder="Your Email" type="email" />
+            <input class="form-control" name="email" placeholder="Votre email" type="email" />
             <br>
-            <input class="form-control" name="password" placeholder="New Password" type="password" />
-            <br>
-            <input class="form-control" name="password" placeholder="New Password verification" type="password" />
+            <input class="form-control" name="password" placeholder="Mot de passe" type="password" />
             <br />
             <br />
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Inscrivez-vous</button>
+            
             </form>
         </div>
     </div>
+    
 </div>
+<p class="copyright">Copyright © 2018 - Tous droits réservés. Réalisé par SocialStudent</p>
 </body>
 
 </html>
 
 
-
-
-
-<!-- <head>
-    <title>Application</title>
-</head>
-<body>
-    <h1> Sign up </h1>
-
-    <center>
-        <form name="Formulaire" method="POST" action="/signin" style="width:600px;height:600px;" >
-        <fieldset> Veuillez remplir le formulaire d'inscription <br>
-            <br>
-            <label id="user">Username</label><br>
-            <input type="text" placeholder="Pseudo"> <br>
-            <br>
-            <label id="email">Mail</label><br>
-            <input type="mail" placeholder="Mail"><br>
-            <br>
-            <label id="confirmation">Confirmation Mail</label><br>
-            <input type="mail" placeholder="Confirmez votre mail"><br>
-            <br>
-            <label id="password">Password</label><br>
-            <input type="password" placeholder="Mot de passe"><br>
-            <br>
-            <input id="login" value="Login" type="submit"> 
-            <br>
-
-          
-            
-        </fieldset></center>
-    </form>
-    
-</body>
-</html> -->
-
-<!-- 
-<head>
-<title> Sign up </title>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link rel="stylesheet" href="/css/signup.css">
-<script type="text/javascript">
-
-
-  function validate_form() {
-    let username = document.getElementById('username').value;
-    let firstName = document.getElementById('firstName').value;
-    let lastName = document.getElementById('lastName').value;
-    let email = document.getElementById('email').value;
-    let input_password = document.getElementById('input_password').value;
-    let input_password2 = document.getElementById('input_password2').value;
-
-    if (username == "" | username == null)
-      document.getElementById('username').style.display = 'block';
-    if (firstName == "" | firstName == null)
-      document.getElementById('alert_firstname').style.display = 'block';
-    if (lastName == "" | lastName == null)
-      document.getElementById('alert_laname').style.display = 'block';
-    if (email == "" | email == null)
-      document.getElementById('alert_email').style.display = 'block';
-    if (input_password == "" | input_password == null)
-      document.getElementById('alert_password').style.display = 'block';
-    if (input_password2 == "" | input_password2 == null)
-      document.getElementById('alert_password2').style.display = 'block';
-    if (input_password != "" && input_password2 != "" && input_password != input_password2)
-      document.getElementById('alert_samepassword').style.display = 'block';
-
-    return (username != "") &&
-           (firstName != "") &&
-           (lastName != "") &&
-           (email != "") &&
-           (input_password != "") &&
-           (input_password2 != "");
-  }
-</script>
-</head>
-
-<body>
-<div class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading"><h3 class="panel-title"><strong>Sign up </strong></h3></div>
-      <div class="panel-body">
-        <form role="form" method="POST" action="/signup" onsubmit="return validate_form();">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <label id="alert_username">You should enter a username</label>
-            <h3 id="taken"> </h3>
-            <input type="text" class="form-control" name="username" id="username" placeholder="Enter a username"
-            onkeyup="check(this.value)">
-          </div>
-
-          <div class="form-group">
-            <label for="firstName">First name</label>
-            <label id="alert_firstname">You should enter your first name</label>
-            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter your first name">
-          </div>
-
-          <div class="form-group">
-            <label for="lastName">Last name</label>
-            <label id="alert_lastname">You should enter your last name</label>
-            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter your last name">
-          </div>
-
-          <div class="form-group">
-            <label for="input_password">Password </label>
-            <label id="alert_password">You should enter a password</label>
-            <input type="password" class="form-control" name="input_password" id="input_password" placeholder="Password">
-          </div>
-
-          <div class="form-group">
-            <label for="input_password2">Password </label>
-            <label id="alert_password2">You should enter a password</label>
-            <label id="alert_samepassword">Password and confirmation should be the same</label>
-            <input type="password" class="form-control" id="input_password2" placeholder="Confirm your password">
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <label id="alert_email">You should enter your email</label>
-            <input type="email" class="form-control" name="email" id="email" placeholder="Enter a valid email">
-          </div>
-
-          <input type="hidden" name="verif" value="1">
-          <button type="submit" class="btn btn-primary btn-default">Sign up</button>
-          <button type="button" class="btn btn-success" onclick="window.location.href='/homepage'">Already have an account?</button>
-        </form>
-      </div>
-    </div>
-</div>
-</body> 
-</html> -->
 

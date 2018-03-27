@@ -4,13 +4,99 @@
   <meta charset="utf-8">
   
   <title>Ajouter un post</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
   
 </head>
+
+<style>
+    body{
+      text-align: justify;
+      width: 70%;
+      margin: auto;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    .trait{
+      color: lightgrey;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  
+    .titreP{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      text-align: center;
+      text-shadow: 2px 2px lightgrey;
+      padding: 10px, 10px, 10px, 10px;
+    }
+  
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: black;
+    }
+  
+    li {
+      float: left;
+    }
+  
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+  
+    li a:hover:not(.active) {
+        background-color: darkgray;
+    }
+  
+    .active {
+        background-color: lightblue;
+    }
+  
+    #menu{
+      color: darkgray;
+      text-align: center;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      text-decoration: none;
+    }
+  
+    #menu li{
+      text-decoration: none;
+      display: inline;
+      text-transform: uppercase;
+      list-style: none;
+    }
+  
+    #menu a:link{
+      text-decoration: none;
+      color: gray;
+      }
+  
+    .titre{
+      color: lightblue;
+      text-transform: uppercase;
+    }	
+  
+    .copyright{
+      font-size: 10px;
+      padding-top: 20px;
+    }
+  </style>
+
+
 <body>
-    <h1> Nouveau post </h1>
+    <ul id="menu">
+				<li> <a  href = "/profil">Profil</a> </li>
+				<li> <a href = "/friends">Liste de tes amis</a> </li>	
+				<li> <a class="active" href = "/newPost">Créer un nouveau post</a> </li>
+				<li> <a href="/" >Retour à la page de connexion</a> </li>
+    </ul>
+    
+    <h1 class="titre"><em>Nouveau post</em></h1>
     <br>
-    <p><a href="/profil">Retour profil</a></p>
     <br>
     <form name="Formulaire" method="POST" action="/newPost" style="width:400px;height:400px;">
       <label>Objet</label>
@@ -23,8 +109,10 @@
       <input type="submit" id="envoyer">
     </form>
     
-
+    <p class="copyright">Copyright © 2018 - Tous droits réservés. Réalisé par SocialStudent</p>
 </body>
 </html>
+
+
 
 

@@ -2,32 +2,148 @@
 <head>
     <meta charset="utf-8">
     <!-- <meta http-equiv="refresh" content="1; URL=./profil" /> -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <title>Liste des amis</title>
 </head>
-<h1>Liste de vos amis</h1>
 
-<p><a href="/profil">Retour profil</a></p>
+<style>
+    body{
+      text-align: justify;
+      width: 70%;
+      margin: auto;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    .trait{
+      color: lightgrey;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  
+    .titreP{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      text-align: center;
+      text-shadow: 2px 2px lightgrey;
+      padding: 10px, 10px, 10px, 10px;
+    }
+  
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: black;
+    }
+  
+    #menu li{
+      float: left;
+    }
 
-<p>Personne que vous follow</p>
+    #menu{
+      color: darkgray;
+      text-align: center;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      text-decoration: none;
+    }
+  
+    #menu li{
+      text-decoration: none;
+      display: inline;
+      text-transform: uppercase;
+      list-style: none;
+    }
 
+    #menu li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+  
+    #menu a:link{
+      text-decoration: none;
+      color: gray;
+      }
+  
+    li a:hover:not(.active) {
+      background-color: darkgray;
+    }
+  
+    .active {
+      background-color: lightblue;
+    }
 
-<% users.forEach(function(user){ %>
+    .titre{
+      color: lightblue;
+      text-transform: uppercase;
+    }	
 
-   <a href="/friends/<%=user._id%>" onclick="">
-     <li><%=user.local.username %> </li>
-   </a>
+    .amis li{
+      text-decoration: none;
+      list-style: none;
+      color: black;
+    }
 
-<%});%>
+    .amis a:link {
+      text-decoration: none;
+    }
 
-<br>
-<p>Personnes que vous unfollow</p>
+    .pasAmis a:link {
+      text-decoration: none;
+    }
 
-<% unUsers.forEach(function(unUser){ %>
+    .pasAmis li{
+      text-decoration: none;
+      list-style: none;
+      color: black;
+    }
+  
+    .copyright{
+      font-size: 10px;
+      padding-top: 20px;
+    }
 
-  <a href="/unfriends/<%=unUser._id%>" onclick="">
-    <li><%=unUser.local.username %> </li>
-  </a>
+    
 
-<%});%>
+  </style>
+
+<body>
+    <ul id="menu">
+				<li> <a href = "/profil">Profil</a> </li>
+				<li> <a class="active" href = "/friends">Liste de tes amis</a> </li>	
+				<li> <a href = "/newPost">Créer un nouveau post</a> </li>
+				<li> <a href="/" >Retour à la page de connexion</a> </li>
+		</ul>
+  <h1 class="titreP"><em>Liste de tes amis</em></h1>
+
+    <br>
+  <h2 class="titre">Personne que tu suis : </h2>
+
+  <div class="amis">
+      <% unUsers.forEach(function(unUser){ %>
+
+        <a href="/unfriends/<%=unUser._id%>" onclick="">
+          <li><%=unUser.local.username %> </li>
+        </a>
+    
+      <%});%>
+  </div>
+  
+  <br>
+  <div class="pasAmis">
+      <h2 class="titre">Personnes que tu ne suis pas :</h2>
+
+      <% users.forEach(function(user){ %>
+    
+        <a href="/friends/<%=user._id%>" onclick="">
+          <li><%=user.local.username %> </li>
+        </a>
+    
+      <%});%>
+  </div>
+  
+  <p class="copyright">Copyright © 2018 - Tous droits réservés. Réalisé par SocialStudent</p>
+</body>
+</html>
+
 
